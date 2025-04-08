@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 @theme {
   --color-mainLayout: #020618;
@@ -8,5 +9,12 @@
   --color-border: #314158;
   --color-btnProj: #45556C;
   --color-btnTextProj: #F8FAFC;
+  --color-link: #90A1B9;
+  --color-link-active: #FFB86A;
+  --color-link-white: #F8FAFC;
+  --color-border: #314158;
+}
 
+body {
+  font-family: "Fira Code", monospace;
 }
