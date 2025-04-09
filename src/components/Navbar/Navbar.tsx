@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
         <NavLink
           to="contact-me"
           className={({ isActive }) =>
-            `hidden md:block text-link py-4 px-6 font-[450] border-x border-border ${
+            `hidden md:block text-link py-4 px-6 font-[450] border-l border-border ${
               isActive ? "border-b-[3px] border-b-link-active" : ""
             }`
           }
