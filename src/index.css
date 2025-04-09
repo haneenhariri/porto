@@ -13,8 +13,10 @@
   --color-link-active: #FFB86A;
   --color-link-white: #F8FAFC;
   --color-border: #314158;
+  --color-jop: #615FFF;
+  --color-teal: #00D5BE;
+  --color-git: #FFA1AD;
 }
-
 body {
   font-family: "Fira Code", monospace;
 }
