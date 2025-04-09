@@ -15,7 +15,7 @@ export default function InfoSide({name , jop , githubLink} : InfoSideProps) {
                 <span className=" text-jop">const</span>
                 <span className=" text-teal">githubLink</span>
                 <span className=" text-link-white">=</span>
-                <Link  className=" underline text-git"  to={githubLink}>“{githubLink}”</Link>
+                <Link  className=" underline text-git" target="_blank"  to={githubLink}>“{githubLink}”</Link>
             </div>
         </div>
     </div>
