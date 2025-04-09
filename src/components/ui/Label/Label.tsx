@@ -1,4 +1,4 @@
-import { labelProps } from "../../types/labels";
+import { labelProps } from "../../../types/labels";
 
 export default function Label({htmlFor , text} :labelProps) {
   return (
