@@ -5,7 +5,7 @@ import { NavSidebarProps } from "../../types/navbar";
 const NavSidebar: React.FC<NavSidebarProps> = ({ closeSidebar }) => {
   return (
     <div
-      className={`fixed top-4 left-4 right-4 bottom-4 rounded-lg bg-mainDiv border border-border z-40 flex flex-col items-start pt-[57px] transition-transform duration-300 ease-in-out`}
+      className={`fixed top-4 left-4 right-4 border-b-0 rounded-b-none rounded-lg bg-mainDiv border border-border z-40 flex flex-col items-start pt-[57px] transition-transform duration-300 ease-in-out`}
     >
       <h2 className="text-link pl-6 pt-6 pb-3 border-b border-border w-full">
         # navigate:

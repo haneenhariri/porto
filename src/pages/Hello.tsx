@@ -1,8 +1,9 @@
+import Hero from "../components/Hero/Hero"
 
 const Hello: React.FC = () => {
   return (
-    <div>Hello
-
+    <div className="">
+      <Hero/>
     </div>
   )
 }
