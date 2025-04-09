@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import emailjs from "emailjs-com";
 import Button from "../ui/Button/Button";
 import Input from "../ui/Input/Input";
 import Label from "../ui/Label/Label";
 import TextArea from "../ui/TextArea";
+import Success from "./Success";
+import { useSendEmail } from "../../hooks/useSendEmail";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ const ContactForm = () => {
   });
 
   const [isValid, setIsValid] = useState(false);
-  const [isSending, setIsSending] = useState(false);
+  const { sendEmail, isSending, isSent, reset } = useSendEmail(); 
 
   useEffect(() => {
     const { name, email, message } = formData;
@@ -27,38 +28,21 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isValid) return;
 
-    setIsSending(true);
-
-    emailjs
-      .send(
-        "service_wo2tkc5", // 👈 من لوحة EmailJS
-        "template_kvi8tf8", // 👈 من قالب الرسالة
-        {
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
-        },
-        "vhWYZuYls8m9w9FsF" // 👈 من حسابك
-      )
-      .then(() => {
-        alert("تم إرسال الرسالة بنجاح ✅");
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch(() => {
-        alert("حدث خطأ أثناء الإرسال ❌");
-      })
-      .finally(() => {
-        setIsSending(false);
-      });
+    sendEmail(formData).then(() => {
+      setFormData({ name: "", email: "", message: "" });
+    });
   };
+
+  if (isSent) return <Success onReset={reset} />;
 
   return (
     <form
-      className="contact-form flex flex-col gap-6 max-w-[372px]"
+      className="contact-form flex flex-col gap-6 max-w-[372px] shrink-0 grow"
       onSubmit={handleSubmit}
     >
       <div className="form-group">

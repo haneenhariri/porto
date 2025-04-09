@@ -11,11 +11,11 @@ const Navbar: React.FC = () => {
     <>
       <nav className="flex justify-between items-center border-b border-b-border relative z-50">
         <div className="main-nav-content flex items-center">
-          <h2 className="text-link py-4 px-6 font-[450] mr-4 lg:mr-32">
+          <h2 className="text-link py-4 px-6 font-[450]  lg:mr-32">
             haneen al-hariri
           </h2>
 
-          <div className="hidden md:flex items-center justify-center">
+          <div className="hidden lg:flex items-center justify-center">
             {navLinks.map((link, index) => (
               <NavLink
                 key={index}
@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className="md:hidden mr-4">
+        <div className="lg:hidden mr-4">
           {isOpen ? (
             <X
               size={28}
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
         <NavLink
           to="contact-me"
           className={({ isActive }) =>
-            `hidden md:block text-link py-4 px-6 font-[450] border-l border-border ${
+            `hidden lg:block text-link py-4 px-6 font-[450] border-l border-border ${
               isActive ? "border-b-[3px] border-b-link-active" : ""
             }`
           }
