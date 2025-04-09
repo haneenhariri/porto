@@ -11,8 +11,8 @@ const Navbar: React.FC = () => {
     <>
       <nav className="flex justify-between items-center border-b border-b-border relative z-50">
         <div className="main-nav-content flex items-center">
-          <h2 className="text-link py-4 px-6 font-[450] border-r border-border mr-4 lg:mr-32">
-            michael-weaver
+          <h2 className="text-link py-4 px-6 font-[450] mr-4 lg:mr-32">
+            haneen al-hariri
           </h2>
 
           <div className="hidden md:flex items-center justify-center">
