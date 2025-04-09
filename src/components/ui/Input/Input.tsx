@@ -12,7 +12,7 @@ export default function Input({ type, plac, value, id, error, onChange }: InputP
             id={id}
             placeholder={plac}
             onChange={onChange}
-            className={`w-full p-3 rounded-lg border text-base placeholder:text-label text-label focus:outline-none bg-input
+            className={`w-full p-3 focus:border-[#CAD5E2] rounded-lg border text-base placeholder:text-label text-label focus:outline-none bg-input
               ${error ? 'border-red-600 bg-red-900/30' : 'border-border focus:outline-[#CAD5E2]'}
             `}
           />
