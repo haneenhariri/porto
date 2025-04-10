@@ -5,33 +5,48 @@ export const useSendEmail = () => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
+  const formatDate = (date: Date) => {
+    return date.toLocaleString("en-US", {
+      weekday: "long", // e.g., Thursday
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+  };
+
   const sendEmail = async (formData: {
     name: string;
     email: string;
     message: string;
   }) => {
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      time: formatDate(new Date()),
+      message: formData.message,
+    };
     setIsSending(true);
     try {
       await emailjs.send(
-        "service_wo2tkc5",
-        "template_kvi8tf8",
-        {
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
-        },
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       setIsSent(true);
     } catch (error) {
       alert("حدث خطأ أثناء الإرسال ❌");
-      console.log(error)
+      console.log(error);
     } finally {
       setIsSending(false);
     }
   };
 
-  const reset = () => setIsSent(false); 
-  
+  const reset = () => setIsSent(false);
+
   return { sendEmail, isSending, isSent, reset };
 };
