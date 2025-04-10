@@ -1,9 +1,13 @@
 import { btnProps } from "../../../types/button";
 
-export default function Button({text,style,onClick} : btnProps) {
+export default function Button({ text, style, onClick, type }: btnProps) {
   return (
-    <button className={`${style} py-2.5 px-3 cursor-pointer rounded-lg w-max`}  onClick={onClick}>
+    <button
+      type={type || "button"}
+      onClick={onClick}
+      className={`${style} py-2.5 px-3 cursor-pointer rounded-lg w-max`}
+    >
       {text}
     </button>
-  )
+  );
 }

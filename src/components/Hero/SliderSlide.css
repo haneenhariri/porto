@@ -1,0 +1,21 @@
+.slick-vertical .slick-slide {
+    margin-bottom: 2px  !important;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+   
+}
+
+.slick-vertical .slick-slide.slick-active {
+    opacity: 1 !important;
+}
+
+.slick-vertical 
+{
+    height: 100% !important;
+}
+.slick-slider .slick-track, .slick-slider .slick-list
+{
+    height: 100% !important;
+
+}
+
