@@ -7,7 +7,7 @@ export default function InfoSide({name , jop , githubLink} : InfoSideProps) {
         <div>
             <h3 className=" text-label xl:text-lg lg:text-base leading-7 mb-1">Hi all. I am</h3>
             <h1 className=" xl:text-6xl lg:text-5xl leading-16 text-link-white">{name}</h1>
-            <h2 className=" xl:text-3xl lg:text-2xl text-jop">{jop}</h2>
+            <h2 className=" xl:text-3xl lg:text-2xl text-job">{jop}</h2>
         </div>
         <div>
             <p className=" text-sm text-label mb-2">// find my profile on Github:</p>

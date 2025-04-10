@@ -1,8 +1,8 @@
 export interface InputProps {
-    type: string;
-    plac: string;
-    value: string;
-    id: string;
+    type?: string;
+    name: string;
+    plac?: string;
+    value?: string;
+    id?: string;
     error?: string; 
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;}
