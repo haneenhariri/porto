@@ -7,7 +7,7 @@ export const useSendEmail = () => {
 
   const formatDate = (date: Date) => {
     return date.toLocaleString("en-US", {
-      weekday: "long", // e.g., Thursday
+      weekday: "long",
       year: "numeric",
       month: "long",
       day: "numeric",

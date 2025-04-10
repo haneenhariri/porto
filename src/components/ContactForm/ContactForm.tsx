@@ -5,14 +5,11 @@ import Label from "../ui/Label/Label";
 import TextArea from "../ui/TextArea";
 import Success from "./Success";
 import { useSendEmail } from "../../hooks/useSendEmail";
+import { ContactFormProps } from "../../types/contact";
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
+const ContactForm = ({ formData, setFormData }: ContactFormProps) => {
+ 
   const [isValid, setIsValid] = useState(false);
   const { sendEmail, isSending, isSent, reset } = useSendEmail(); 
 
