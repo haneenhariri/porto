@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DropdownProps } from "../../types/Dropdown";
 import { CircleArrowDown } from "lucide-react";
 
-const DropdownMenu = ({ title, content }: DropdownProps) => {
+const DropdownMenu = ({ title, content, icon }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -19,7 +19,7 @@ const DropdownMenu = ({ title, content }: DropdownProps) => {
           isOpen?
           <CircleArrowDown className="w-5 transition" />:
           <CircleArrowDown className="w-5 transition rotate-180" />
-        }{title}
+        }{icon}{title}
       </button>
       {isOpen && (
         <ul className="mt-2 mb-3">
