@@ -10,7 +10,7 @@ export default function CodeCard({ code }: { code: string }) {
         }
       }, []);
   return (
-    <div className=" p-4 w-max border  border-border rounded-2xl bg-mainLayout ">
+    <div className=" p-4 h-[128px]  w-full border  border-border rounded-2xl text-sm overflow-hidden bg-mainLayout ">
       <pre>
         <code ref={codeRef} className="language-typescript !bg-mainLayout">
           {code}

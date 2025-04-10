@@ -2,7 +2,7 @@ import Hero from "../components/Hero/Hero"
 
 const Hello: React.FC = () => {
   return (
-    <div className="">
+    <div className=" grow">
       <Hero/>
     </div>
   )
