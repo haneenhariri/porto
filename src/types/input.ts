@@ -1,5 +1,6 @@
 export interface InputProps {
     type?: string;
+    name: string;
     plac?: string;
     value?: string;
     id?: string;

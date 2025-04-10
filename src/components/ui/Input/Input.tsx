@@ -1,12 +1,13 @@
 import erroricon from '../../../assets/inputicon/Icon (10).png'
 import { InputProps } from '../../../types/input';
 
-export default function Input({ type, plac, value, id, error, onChange }: InputProps) {
+export default function Input({ type, name, plac, value, id, error, onChange }: InputProps) {
     return (
       <div className="flex flex-col gap-1 ">
         <div className="relative">
           <input
             type={type}
+            name={name}
             required
             value={value}
             id={id}

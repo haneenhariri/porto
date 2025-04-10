@@ -51,6 +51,7 @@ const ContactForm = () => {
           type="text"
           id="name"
           plac="Your Name"
+          name="name"
           value={formData.name}
           onChange={handleChange}
         />
@@ -58,10 +59,11 @@ const ContactForm = () => {
       <div className="form-group">
         <Label text="_email" htmlFor="email" />
         <Input
-          type="text"
+          type="email"
           id="email"
           plac="Your Email"
           value={formData.email}
+          name="email"
           onChange={handleChange}
         />
       </div>
@@ -70,6 +72,7 @@ const ContactForm = () => {
         <TextArea
           plac="Your Message"
           id="message"
+          name="message"
           value={formData.message}
           onChange={handleChange}
         />

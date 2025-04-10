@@ -1,13 +1,14 @@
 import { InputProps } from "../../types/input";
 import erroricon from "../../assets/inputicon/Icon (10).png";
 
-const TextArea = ({ plac, value, id, error, onChange }: InputProps) => {
+const TextArea = ({ name, plac, value, id, error, onChange }: InputProps) => {
   return (
     <div className="flex flex-col gap-1 ">
       <div className="relative">
         <textarea
           placeholder={plac}
           id={id}
+          name={name}
           value={value}
           required
           onChange={onChange}
