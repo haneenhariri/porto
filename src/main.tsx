@@ -9,7 +9,8 @@ import Projects from "./pages/Projects.tsx";
 import ContactMe from "./pages/ContactMe.tsx";
 import ProjectDetails from "./pages/ProjectDetails.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const routes = createBrowserRouter([
   {
     path: "/",

@@ -25,3 +25,8 @@
 body {
   font-family: "Fira Code", monospace;
 }
+
+*
+{
+  box-sizing: border-box;
+}
