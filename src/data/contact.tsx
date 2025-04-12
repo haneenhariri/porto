@@ -2,8 +2,10 @@ import { FaFacebookF, FaInstagram, FaSchool, FaTelegramPlane, FaUniversity, FaWh
 import { FaArrowUpRightFromSquare, FaPhone } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import { RiFolder3Fill } from "react-icons/ri";
+import { ContactSection, NestedDropdown } from "../types/contact";
 
-export const contactsSections = [
+//* _contact-me page sidebar data
+export const contactsSidebarSections: ContactSection[] = [
   {
     title: "contacts",
     content: [
@@ -41,7 +43,8 @@ export const contactsSections = [
   },
 ];
 
-export const aboutMeSidebarSections = [
+//* _about-me page sidebar data
+export const aboutMeSidebarSections: ContactSection[] = [
   {
     title: "personal-info",
     content: [
@@ -69,7 +72,7 @@ export const aboutMeSidebarSections = [
           { text: "university", icon: <FaUniversity />, to: "#" },
         ],
       },
-    ],
+    ] as NestedDropdown[],
   },
   {
     title: "contacts",

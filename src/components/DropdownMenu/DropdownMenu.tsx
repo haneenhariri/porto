@@ -1,29 +1,7 @@
 import { useState } from "react";
-import { ContactItem } from "../../types/contact";
 import { IoMdArrowDropright } from "react-icons/io";
-
-type DropdownContent = ContactItem[] | NestedDropdown[];
-
-interface NestedDropdown {
-  title: string;
-  icon?: React.ReactNode;
-  content: ContactItem[];
-}
-
-interface DropdownMenuProps {
-  title: string;
-  icon?: React.ReactNode;
-  content: DropdownContent;
-  depth?: number;
-}
-
-const isNestedDropdown = (
-  content: DropdownContent
-): content is NestedDropdown[] => {
-  return (
-    Array.isArray(content) && "title" in content[0] && "content" in content[0]
-  );
-};
+import { DropdownMenuProps } from "../../types/Dropdown";
+import { isNestedDropdown } from "../../utils/isNestedDropdown";
 
 const DropdownMenu = ({ title, icon, content, depth = 0 }: DropdownMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +34,7 @@ const DropdownMenu = ({ title, icon, content, depth = 0 }: DropdownMenuProps) =>
                     title={nested.title}
                     icon={nested.icon}
                     content={nested.content}
-                    depth={depth + 1} // <-- العمق يزيد
+                    depth={depth + 1}
                   />
                 </li>
               ))
@@ -64,7 +42,7 @@ const DropdownMenu = ({ title, icon, content, depth = 0 }: DropdownMenuProps) =>
                 <li
                   key={index}
                   className="py-2 hover:bg-link-active hover:text-link-white flex items-center cursor-pointer gap-2"
-                  style={{ paddingLeft: `${(paddingLeft + 1) * 4}px` }} // عنصر المحتوى ينزاح أكثر قليلاً
+                  style={{ paddingLeft: `${(paddingLeft + 1) * 4}px` }}
                 >
                   {item.icon}
                   <a href={item.to}>{item.text}</a>
