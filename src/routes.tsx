@@ -1,23 +1,25 @@
+import React from 'react';
 import { RouteObject } from 'react-router-dom';
-import MainLayout from './components/layout/MainLayout';
-import AboutMe from './pages/AboutMe';
-import ContactMe from './pages/ContactMe';
-import ErrorPage from './pages/ErrorPage';
-import Hello from './pages/Hello';
-import ProjectDetails from './pages/ProjectDetails';
-import Projects from './pages/Projects';
+
+const MainLayout = React.lazy(() => import('./components/layout/MainLayout'));
+const AboutMe = React.lazy(() => import('./pages/AboutMe'));
+const ContactMe = React.lazy(() => import('./pages/ContactMe'));
+const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
+const Hello = React.lazy(() => import('./pages/Hello'));
+const ProjectDetails = React.lazy(() => import('./pages/ProjectDetails'));
+const Projects = React.lazy(() => import('./pages/Projects'));
 
 export const routes: RouteObject[] = [
   {
-    path: '/',
+    path: "/",
     element: <MainLayout />,
     children: [
       { index: true, element: <Hello /> },
-      { path: 'about-me', element: <AboutMe /> },
-      { path: 'projects', element: <Projects /> },
-      { path: 'projects/:id', element: <ProjectDetails /> },
-      { path: 'contact-me', element: <ContactMe /> },
-      { path: '*', element: <ErrorPage /> },
+      { path: "about-me", element: <AboutMe /> },
+      { path: "projects", element: <Projects /> },
+      { path: "projects/:id", element: <ProjectDetails /> },
+      { path: "contact-me", element: <ContactMe /> },
+      { path: "*", element: <ErrorPage /> },
     ],
   },
 ];
