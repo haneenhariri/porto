@@ -39,7 +39,7 @@ const ContactForm = ({ formData, setFormData }: ContactFormProps) => {
 
   return (
     <form
-      className="contact-form flex flex-col gap-6 max-w-[372px] shrink-0 grow"
+      className="contact-form flex flex-col gap-6 w- xl:max-w-[372px] shrink-0 grow"
       onSubmit={handleSubmit}
     >
       <div className="form-group">

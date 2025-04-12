@@ -1,13 +1,19 @@
-import DropdownMenu from "../DropdownMenu/DropdownMenu"
-import { contactsData, findMeData } from "../../data/contact" 
+import { ContactSideBarProps } from "../../types/contact";
+import DropdownMenu from "../DropdownMenu/DropdownMenu";
 
-const ContactSideBar = () => {
+const PageSideBar = ({ sections }: ContactSideBarProps) => {
   return (
     <div className="border-r border-border">
-      <DropdownMenu title="contacts" content={contactsData}/>
-      <DropdownMenu title="find-me-also-in" content={findMeData} />
+      {sections.map((section, index) => (
+        <DropdownMenu
+          key={index}
+          title={section.title}
+          content={section.content}
+          icon={section.icon}
+        />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ContactSideBar
+export default PageSideBar;

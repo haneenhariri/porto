@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import { navLinks } from "../../data/navLinks";
 import NavSidebar from "./NavSidebar";
 import { useSidebar } from "../../hooks/useSidebar";
+import { TbMenu3 } from "react-icons/tb";
+import { IoClose } from "react-icons/io5";
 
 const Navbar: React.FC = () => {
   const { isOpen, toggle, close } = useSidebar();
@@ -36,17 +37,12 @@ const Navbar: React.FC = () => {
 
         <div className="lg:hidden mr-4">
           {isOpen ? (
-            <X
-              size={28}
-              className="text-link cursor-pointer"
+            <IoClose
+              className="text-link cursor-pointer text-3xl"
               onClick={toggle}
             />
           ) : (
-            <Menu
-              size={28}
-              className="text-link cursor-pointer"
-              onClick={toggle}
-            />
+            <TbMenu3 onClick={toggle} className="text-link cursor-pointer text-3xl" />
           )}
         </div>
 

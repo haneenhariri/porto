@@ -1,9 +1,11 @@
-export type DropdownProps = {
-  icon?: React.ReactNode;
+export interface ContactItem {
+  text: string;
+  icon: React.ReactNode;
+  to: string;
+}
+
+export interface DropdownMenuProps {
   title: string;
-  content: {
-    text: string;
-    icon: React.ReactNode;
-    to: string;
-  }[];
-};
+  icon?: React.ReactNode;
+  content: ContactItem[];
+}
