@@ -1,13 +1,11 @@
-import { projectsSidebarSections } from "../../data/contact";
+import { contactsSidebarSections } from "../../data/sidebar";
 import { ContactLayoutProps } from "../../types/contact";
-import PageSideBar from "../ContactSideBar/ContactSideBar";
-
+import PageSideBar from "../PageSideBar/PageSideBar";
 
 const ContactLayout = ({ children }: ContactLayoutProps) => {
-
   return (
     <div className="contact-layout flex flex-col md:flex-row w-full">
-      <PageSideBar sections={projectsSidebarSections} />
+      <PageSideBar sections={contactsSidebarSections} />
       <div className="contact-body flex flex-col grow w-full">
         <div className="border-b border-border h-12 hidden md:block"></div>
         <div className="w-full flex flex-wrap grow justify-center items-center">
