@@ -25,3 +25,8 @@ body {
 {
   box-sizing: border-box;
 }
+
+.peer:checked ~ div .peer-checked\:block {
+  display: block;
+}
+
