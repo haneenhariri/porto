@@ -34,7 +34,7 @@ export default function ProjectLayout() {
       );
 
   return (
-    <div className="about-me-layout flex h-full w-full">
+    <div className="about-me-layout grow flex h-full w-full">
       <PageSideBar sections={sectionsWithHandlers} />
       
       <div className="!w-full">
