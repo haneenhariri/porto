@@ -3,7 +3,7 @@ import DropdownMenu from "../DropdownMenu/DropdownMenu";
 
 const PageSideBar = ({ sections }: ContactSideBarProps) => {
   return (
-    <div className="border-r border-border">
+    <div className="border-r  border-border">
       {sections.map((section, index) => (
         <DropdownMenu
           key={index}

@@ -58,6 +58,7 @@ const DropdownMenu = ({
                   <input
                     type="checkbox"
                     id={item.text}
+                    checked={item.checked}
                     onChange={(e) => item.onChange(e.target.checked)}
                     className="peer hidden"
                   />

@@ -1,7 +1,12 @@
+import ProjectLayout from "../components/layout/ProjectLayout"
+
 
 const Projects = () => {
+
   return (
-    <div>Projects</div>
+    <div className=" h-full">
+      <ProjectLayout/>
+    </div>
   )
 }
 

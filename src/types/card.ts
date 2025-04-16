@@ -5,4 +5,5 @@ export interface projCardProps
     tools: string;
     bgColor:string;
     description: string;
+    projectLink: string;
 }
