@@ -25,6 +25,7 @@ export interface ContactItem {
 export interface CheckboxItem {
   text: string;
   icon?: React.ReactNode;
+  checked?: boolean;
   onChange: (checked: boolean) => void;
 }
 

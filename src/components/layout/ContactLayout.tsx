@@ -1,10 +1,8 @@
-import { contactsSidebarSections} from "../../data/contact";
+import { contactsSidebarSections } from "../../data/sidebar";
 import { ContactLayoutProps } from "../../types/contact";
-import PageSideBar from "../ContactSideBar/ContactSideBar";
-
+import PageSideBar from "../PageSideBar/PageSideBar";
 
 const ContactLayout = ({ children }: ContactLayoutProps) => {
-
   return (
     <div className="contact-layout flex flex-col md:flex-row w-full">
       <PageSideBar sections={contactsSidebarSections} />

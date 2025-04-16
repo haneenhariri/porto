@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IoMdArrowDropright } from "react-icons/io";
+import { IoMdArrowDropright, IoMdCheckmark } from "react-icons/io";
 import {
   DropdownMenuProps,
   ContactItem,
@@ -52,12 +52,13 @@ const DropdownMenu = ({
             ? (content as CheckboxItem[]).map((item, index) => (
                 <li
                   key={index}
-                  className="py-2 flex items-center gap-2 cursor-pointer hover:bg-link-active hover:text-link-white"
+                  className="relative py-2 flex items-center gap-2 cursor-pointer hover:bg-link-active hover:text-link-white"
                   style={{ paddingLeft: `${(paddingLeft + 1) * 4}px` }}
                 >
                   <input
                     type="checkbox"
                     id={item.text}
+                    checked={item.checked}
                     onChange={(e) => item.onChange(e.target.checked)}
                     className="peer hidden"
                   />
@@ -66,7 +67,7 @@ const DropdownMenu = ({
                     className="w-5 h-5 rounded border border-link flex items-center justify-center
                            peer-checked:bg-link peer-checked:border-link transition-all"
                   >
-                    
+                    <IoMdCheckmark className="text-white w-4 h-4 hidden peer-checked:block" />
                   </div>
 
                   {item.icon}

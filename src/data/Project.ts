@@ -4,6 +4,15 @@ export const  ProjectData =
 [
     {
         projectName : 'proj1',
+        tools : ['html' , 'css' , 'JavaScript'],
+        iconTools : react,
+        projDescription: 'courses platform',
+        projectLink:'https://haneenhariri.github.io/Flower-store/',
+        img: project1,
+        bgColor:'#A3B3FF'
+    },
+    {
+        projectName : 'proj2',
         tools : ['react' , 'ts' , 'bootstrap'],
         iconTools : react,
         projDescription: 'courses platform',
@@ -12,21 +21,12 @@ export const  ProjectData =
         bgColor:'#A3B3FF'
     },
     {
-        projectName : 'proj1',
+        projectName : 'proj3',
         tools : ['react' , 'ts' , 'bootstrap'],
-        iconTools : 'next',
+        iconTools : react,
         projDescription: 'courses platform',
-        projectLink:'',
-        img:'',
-        bgColor:'#A3B3FF'
-    },
-    {
-        projectName : 'proj1',
-        tools : ['react' , 'ts' , 'bootstrap'],
-        iconTools : 'pure',
-        projDescription: 'courses platform',
-        projectLink:'',
-        img:'',
+        projectLink:'https://haneenhariri.github.io/Flower-store/',
+        img: project1,
         bgColor:'#A3B3FF'
     },
 ]

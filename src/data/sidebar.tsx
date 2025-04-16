@@ -1,8 +1,9 @@
-import { FaFacebookF, FaInstagram, FaSchool, FaTelegramPlane, FaUniversity, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaSchool, FaTelegramPlane,  FaUniversity, FaWhatsapp } from "react-icons/fa";
 import { FaArrowUpRightFromSquare, FaCss3, FaHtml5, FaJs, FaPhone, FaReact } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import { RiFolder3Fill } from "react-icons/ri";
 import { ContactSection, NestedDropdown } from "../types/contact";
+import { SiTypescript } from "react-icons/si";
 
 //* _contact-me page sidebar data
 export const contactsSidebarSections: ContactSection[] = [
@@ -114,6 +115,11 @@ export const projectsSidebarSections: ContactSection[] = [
         text: "JavaScript",
         icon: <FaJs />,
         onChange: () => console.log("JS"),
+      },
+      {
+        text: "TypeScript",
+        icon: <SiTypescript />,
+        onChange: () => console.log("Ts"),
       },
     ],
   },
