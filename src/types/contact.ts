@@ -22,6 +22,17 @@ export interface ContactItem {
   to: string;
 }
 
+export interface CheckboxItem {
+  text: string;
+  icon?: React.ReactNode;
+  onChange: (checked: boolean) => void;
+}
+
+export interface checkBoxDropdown {
+  title: string;
+  icon?: React.ReactNode;
+  content?: CheckboxItem[];
+}
 export interface NestedDropdown {
   title: string;
   icon?: React.ReactNode;
@@ -31,7 +42,7 @@ export interface NestedDropdown {
 export interface ContactSection {
   title: string;
   icon?: React.ReactNode;
-  content: ContactItem[] | NestedDropdown[];
+  content: (ContactItem | CheckboxItem | NestedDropdown)[];
 }
 
 export interface ContactSideBarProps {

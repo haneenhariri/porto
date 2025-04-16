@@ -1,15 +1,17 @@
+import { CheckboxItem } from "./contact";
+
 export interface ContactItem {
   text: string;
   icon: React.ReactNode;
   to: string;
 }
 
-export type DropdownContent = ContactItem[] | NestedDropdown[];
+export type DropdownContent = ContactItem[] | NestedDropdown[] | CheckboxItem[];
 
 export interface NestedDropdown {
   title: string;
   icon?: React.ReactNode;
-  content: ContactItem[];
+  content: DropdownContent;
 }
 
 export interface DropdownMenuProps {

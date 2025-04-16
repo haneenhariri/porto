@@ -1,9 +1,19 @@
 import { useState } from "react";
 import { IoMdArrowDropright } from "react-icons/io";
-import { DropdownMenuProps } from "../../types/Dropdown";
-import { isNestedDropdown } from "../../utils/isNestedDropdown";
+import {
+  DropdownMenuProps,
+  ContactItem,
+  NestedDropdown,
+} from "../../types/Dropdown";
+import { CheckboxItem } from "../../types/contact";
+import { isCheckboxList, isNestedDropdown } from "../../utils/dropDown";
 
-const DropdownMenu = ({ title, icon, content, depth = 0 }: DropdownMenuProps) => {
+const DropdownMenu = ({
+  title,
+  icon,
+  content,
+  depth = 0,
+}: DropdownMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -28,7 +38,7 @@ const DropdownMenu = ({ title, icon, content, depth = 0 }: DropdownMenuProps) =>
       {isOpen && (
         <ul className="mt-2 mb-3">
           {isNestedDropdown(content)
-            ? content.map((nested, index) => (
+            ? (content as NestedDropdown[]).map((nested, index) => (
                 <li key={index}>
                   <DropdownMenu
                     title={nested.title}
@@ -38,7 +48,34 @@ const DropdownMenu = ({ title, icon, content, depth = 0 }: DropdownMenuProps) =>
                   />
                 </li>
               ))
-            : content.map((item, index) => (
+            : isCheckboxList(content)
+            ? (content as CheckboxItem[]).map((item, index) => (
+                <li
+                  key={index}
+                  className="py-2 flex items-center gap-2 cursor-pointer hover:bg-link-active hover:text-link-white"
+                  style={{ paddingLeft: `${(paddingLeft + 1) * 4}px` }}
+                >
+                  <input
+                    type="checkbox"
+                    id={item.text}
+                    onChange={(e) => item.onChange(e.target.checked)}
+                    className="peer hidden"
+                  />
+
+                  <div
+                    className="w-5 h-5 rounded border border-link flex items-center justify-center
+                           peer-checked:bg-link peer-checked:border-link transition-all"
+                  >
+                    
+                  </div>
+
+                  {item.icon}
+                  <label htmlFor={item.text} className="cursor-pointer grow">
+                    {item.text}
+                  </label>
+                </li>
+              ))
+            : (content as ContactItem[]).map((item, index) => (
                 <li
                   key={index}
                   className="py-2 hover:bg-link-active hover:text-link-white flex items-center cursor-pointer gap-2"
@@ -53,4 +90,5 @@ const DropdownMenu = ({ title, icon, content, depth = 0 }: DropdownMenuProps) =>
     </div>
   );
 };
+
 export default DropdownMenu;

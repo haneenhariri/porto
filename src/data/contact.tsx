@@ -1,5 +1,5 @@
 import { FaFacebookF, FaInstagram, FaSchool, FaTelegramPlane, FaUniversity, FaWhatsapp } from "react-icons/fa";
-import { FaArrowUpRightFromSquare, FaPhone } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaCss3, FaHtml5, FaJs, FaPhone, FaReact } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import { RiFolder3Fill } from "react-icons/ri";
 import { ContactSection, NestedDropdown } from "../types/contact";
@@ -86,6 +86,34 @@ export const aboutMeSidebarSections: ContactSection[] = [
         text: "+3598246359",
         icon: <FaPhone />,
         to: "tel:+3598246359",
+      },
+    ],
+  },
+];
+//* _projects page sidebar data
+export const projectsSidebarSections: ContactSection[] = [
+  {
+    title: "projects",
+    content: [
+      {
+        text: "React",
+        icon: <FaReact />,
+        onChange: () => console.log("React"),
+      },
+      {
+        text: "HTML",
+        icon: <FaHtml5 />,
+        onChange: () => console.log("HTML"),
+      },
+      {
+        text: "CSS",
+        icon: <FaCss3 />,
+        onChange: () => console.log("CSS"),
+      },
+      {
+        text: "JavaScript",
+        icon: <FaJs />,
+        onChange: () => console.log("JS"),
       },
     ],
   },

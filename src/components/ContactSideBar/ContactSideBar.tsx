@@ -1,4 +1,4 @@
-import { ContactSideBarProps } from "../../types/contact";
+import { ContactItem, ContactSideBarProps } from "../../types/contact";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 
 const PageSideBar = ({ sections }: ContactSideBarProps) => {
@@ -8,7 +8,7 @@ const PageSideBar = ({ sections }: ContactSideBarProps) => {
         <DropdownMenu
           key={index}
           title={section.title}
-          content={section.content}
+          content={section.content as ContactItem[]}
           icon={section.icon}
         />
       ))}

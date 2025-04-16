@@ -7,11 +7,9 @@ import Success from "./Success";
 import { useSendEmail } from "../../hooks/useSendEmail";
 import { ContactFormProps } from "../../types/contact";
 
-
 const ContactForm = ({ formData, setFormData }: ContactFormProps) => {
- 
   const [isValid, setIsValid] = useState(false);
-  const { sendEmail, isSending, isSent, reset } = useSendEmail(); 
+  const { sendEmail, isSending, isSent, reset } = useSendEmail();
 
   useEffect(() => {
     const { name, email, message } = formData;
@@ -24,7 +22,6 @@ const ContactForm = ({ formData, setFormData }: ContactFormProps) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
-
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
