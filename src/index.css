@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
 
 @theme {
   --color-mainLayout: #020618;
@@ -30,3 +31,6 @@ body {
   display: block;
 }
 
+pre code.hljs {
+  padding: 2px !important;
+}
